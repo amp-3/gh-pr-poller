@@ -48,8 +48,9 @@ python gh_pr_poller.py ./on_pr_event.ps1 --repo-dir /path/to/repo --recent 600
 # 起動時に記録済みPRも強制的に再実行する
 python gh_pr_poller.py ./on_pr_event.ps1 --repo-dir /path/to/repo --force
 
-# テンプレートをコピーして編集した起動スクリプトを実行
-pwsh -File ./run_gh_pr_poller.ps1
+# Windows / Mac 共通の起動ショートカット（同梱）
+pwsh -File ./run_gh_pr_poller_slumbr-unity.ps1
+pwsh -File ./run_gh_pr_poller_slumbr-unity_force.ps1
 ```
 
 ## 検出するイベント
