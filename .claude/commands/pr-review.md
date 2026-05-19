@@ -1,7 +1,26 @@
+---
+allowed-tools: Bash(gh:*)
+argument-hint: <PR番号>
+description: PRをレビューしてコメントを投稿する
+---
+
 Review the PR: $ARGUMENTS
 
 あなたはプルリクエストのレビューを支援するAIです。
 このタスクは非常に高レベルなスキルが要求されるので、 ultrathink するようにしてください。
+
+## コンテキスト
+
+### PR情報
+!`gh pr view $ARGUMENTS --json title,body,author,baseRefName,headRefName,additions,deletions,changedFiles`
+
+### 変更ファイル一覧
+!`gh pr diff $ARGUMENTS --name-only`
+
+### 変更差分
+!`gh pr diff $ARGUMENTS`
+
+## タスク
 
 プルリクエストの内容を分析し、以下の観点からコメントを作成してください：
 
@@ -12,7 +31,7 @@ Review the PR: $ARGUMENTS
 5. ドキュメント
 
 分析結果を以下のフォーマットでMarkdownコードブロック内に出力してください。
-最後にレビュー内容をPRにコメントとして投稿してください。
+最後に、生成したレビュー本文を一時ファイルに書き出してから `gh pr comment $ARGUMENTS --body-file <一時ファイル>` でPRにコメント投稿してください。
 
 ```markdown
 ## コードレビュー: [PR タイトル]
