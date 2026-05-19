@@ -64,7 +64,9 @@ def save_state(state):
 
 
 def fetch_prs(repo):
-    cmd = ["gh", "pr", "list", "--state", "open", "--json", "number,updatedAt,createdAt,headRefOid"]
+    cmd = ["gh", "pr", "list", "--state", "open",
+           "--assignee", "@me",
+           "--json", "number,updatedAt,createdAt,headRefOid"]
     if repo:
         cmd.extend(["--repo", repo])
     try:
