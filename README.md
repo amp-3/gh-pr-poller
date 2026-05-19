@@ -6,7 +6,7 @@ GitHub CLIの`gh`コマンドを利用して、指定リポジトリのPRの新�
 
 - Windows または macOS
 - Python 3.10以上
-- [PowerShell Core 7+ (`pwsh`)](https://learn.microsoft.com/powershell/scripting/install/installing-powershell) — `.ps1` を実行する場合
+- [PowerShell Core 7+ (`pwsh`)](https://learn.microsoft.com/powershell/scripting/install/installing-powershell) [(Win)](https://learn.microsoft.com/ja-jp/powershell/scripting/install/install-powershell-on-windows?view=powershell-7.6) — `.ps1` を実行する場合
 - [GitHub CLI (`gh`)](https://cli.github.com/) がインストール済みかつ認証済みであること
 
 ## 使い方
